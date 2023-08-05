@@ -1,0 +1,13 @@
+services:
+  mstream:
+    image: lscr.io/linuxserver/mstream:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - ./config.json:/config/config.json.v4-bak
+      - ./uploads:/music
+      - ./logs:/media/logs
+    ports:
+      - "127.0.0.1:3000:3000"
