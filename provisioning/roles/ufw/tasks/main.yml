@@ -27,6 +27,18 @@
     rule: allow
     port: "$SSH_PORT"
 
+- name: Open HTTP port
+  environment: "{{ env }}"
+  ufw:
+    rule: allow
+    port: "$HTTP_PORT"
+
+- name: Open HTTPS port
+  environment: "{{ env }}"
+  ufw:
+    rule: allow
+    port: "$HTTPS_PORT"
+
 - name: Restart ufw
   service:
     name: ufw
