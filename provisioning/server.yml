@@ -1,0 +1,8 @@
+---
+-   name: Provision Server
+    hosts: server
+    remote_user: "$REMOTE_USER"
+    become: true
+    become_method: sudo
+    roles:
+        - ufw

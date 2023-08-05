@@ -1,0 +1,33 @@
+---
+- name: Install ufw
+  apt:
+    name: ufw
+    state: latest
+    update_cache: yes
+
+- name: UFW reset
+  community.general.ufw:
+    state: reset
+
+- name: UFW allow outgoing
+  community.general.ufw:
+    state: enabled
+    direction: outgoing
+    policy: allow
+
+- name: UFW deny incoming
+  community.general.ufw:
+    state: enabled
+    direction: incoming
+    policy: deny
+
+- name: Open SSH port
+  environment: "{{ env }}"
+  ufw:
+    rule: allow
+    port: "$SSH_PORT"
+
+- name: Restart ufw
+  service:
+    name: ufw
+    state: restarted
