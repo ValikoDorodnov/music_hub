@@ -17,6 +17,12 @@
     dest: /etc/ssl
     mode: preserve
 
+- name: Copy .htpasswd config
+  copy:
+    src: .htpasswd
+    dest: /etc/nginx/.htpasswd
+    mode: preserve
+
 - name: Restart Nginx
   service:
     name: nginx
