@@ -2,3 +2,4 @@
 /uploads
 /logs
 /config.json
+/config.prod.json

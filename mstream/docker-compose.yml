@@ -6,7 +6,7 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - ./config.json:/config/config.json.v4-bak
+      - ./config.json:/config/config.json
       - ./uploads:/music
       - ./logs:/media/logs
     ports:
