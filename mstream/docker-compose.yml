@@ -8,6 +8,6 @@ services:
     volumes:
       - ./config.json:/config/config.json
       - ./uploads:/music
-      - ./logs:/media/logs
+      - ./logs:/config/logs
     ports:
       - "127.0.0.1:3000:3000"
