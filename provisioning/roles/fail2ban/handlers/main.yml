@@ -1,0 +1,6 @@
+---
+-   name: Start fail2ban on boot
+    systemd:
+      name: fail2ban
+      state: started
+      enabled: yes
